@@ -2,7 +2,8 @@ from datetime import datetime
 
 print("Escolha e digite as opções abaixo !:")
 
-menu = """
+   
+menu = """\n
 [1] Depositar
 [2] Sacar
 [3] Extrato
