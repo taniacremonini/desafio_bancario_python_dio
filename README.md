@@ -1,94 +1,103 @@
-# 💳 Sistema Bancário em Python
 
-Este é um projeto de **sistema bancário simples** desenvolvido em Python como parte de um desafio da [DIO.me](https://www.dio.me). Ele simula funcionalidades básicas de um banco para fins educacionais.
+ # Python- sistema_bancario.py
+## 🧪 Exemplo de Uso
+Após iniciar o programa, você verá o menu abaixo:
 
----
+================ MENU ================
 
-## 🧰 Funcionalidades
+[d] Depositar
 
-- Depósito de valores
-- Saque com limite de valor e quantidade diária
-- Extrato bancário com histórico de transações
-- Interface de texto simples com menu
-- Validação de entrada para operações
+[s] Sacar
 
----
+[e] Extrato
 
-## 🎯 Regras de negócio
+[nc] Nova conta
 
-- O usuário pode realizar até **3 saques diários**
-- Cada saque tem um **limite de R$500**
-- Não é permitido depositar ou sacar valores negativos ou zero
-- O extrato exibe **todas as movimentações** e o **saldo atual**
+[lc] Listar contas
 
----
+[nu] Novo usuário
 
-## 📷 Exemplo do menu
-
-```text
-[1] Depositar
-[2] Sacar
-[3] Extrato
-[4] Sair
+[q] Sair
 
 =>
-```
+
+
+### 1. Criando um novo usuário
+
+Você deve informar:
+
+- CPF (somente números)
+- Nome completo
+- Data de nascimento (dd-mm-aaaa)
+- Endereço (formato: rua, número - bairro - cidade/UF)
+
+### 2. Criando uma nova conta
+
+Informe o CPF do usuário já cadastrado para vincular a conta.
+
+### 3. Realizando um depósito
+
+Informe o CPF do cliente e o valor a ser depositado.
+
+### 4. Realizando um saque
+
+Informe o CPF e o valor. Lembre-se das **regras de saque**:
+
+- Máximo de R$500 por saque
+- Limite de 3 saques por dia
+
+### 5. Visualizando o extrato
+
+O sistema exibirá todas as transações realizadas (saques e depósitos) com os respectivos valores e datas.
 
 ---
 
-## 📄 Exemplo de extrato
+## 🛠 Organização do Código
 
-```
-===================================
-         EXTRATO BANCÁRIO
-===================================
-Depósito: R$ 100.00
-Saque:    R$ 50.00
------------------------------------
-💰 Saldo atual: R$ 50.00
-📅 Data/hora: 12/04/2025 17:15:00
-===================================
-```
+O projeto é dividido em:
+
+| Arquivo/Função         | Responsabilidade                                 |
+|------------------------|--------------------------------------------------|
+| `Cliente`, `PessoaFisica` | Representação de usuários                      |
+| `Conta`, `ContaCorrente` | Lógica das contas e validações de operações     |
+| `Historico`             | Armazena transações da conta                     |
+| `Transacao`, `Saque`, `Deposito` | Executa e registra operações financeiras |
+| Funções como `depositar`, `sacar`, `criar_cliente` | Interação com usuário |
 
 ---
 
-## 📦 Requisitos
+## 💡 Dicas para Estudo
 
-- Python 3.7 ou superior
-
----
-
-## ▶️ Como executar
-
-1. Clone o repositório:
-
-```bash
-git clone https://github.com/seu-usuario/sistema-bancario-python.git
-cd sistema-bancario-python
-```
-
-2. Execute o programa:
-
-```bash
-python banco.py
-```
+- Explore os conceitos de **classe abstrata**, **encapsulamento**, **herança** e **polimorfismo** usados no projeto.
+- Tente implementar **testes automatizados** com `unittest` para as classes.
+- Modifique a lógica para permitir que o usuário escolha entre múltiplas contas associadas ao mesmo CPF (implementação pendente marcada como `FIXME`).
 
 ---
 
-## 🚀 Aprendizados
+## Requisitos
+Python 3.x
 
-Com este projeto você pode treinar:
+Bibliotecas utilizadas: datetime, textwrap, abc
 
-- Estrutura de repetição (`while`)
-- Condicionais (`if`, `elif`, `else`)
-- Manipulação de strings
-- Validação de dados
-- Controle de fluxo de um sistema simples
+## 📌 Regras de Negócio
+Saques limitados a R$500 por operação.
 
----
+Máximo de 3 saques por conta ao dia.
 
-## 🧑‍💻 Feito com carinho por tania.cremonini 💙
+CPF não pode ser duplicado entre usuários.
 
-> Projeto desenvolvido com fins educacionais para prática da linguagem Python.
+Cada cliente pode ter múltiplas contas.
 
+
+
+## 👩‍🎓 Projeto Acadêmico
+Projeto desenvolvido no contexto desafio Python Dio, com foco em:
+
+Programação Orientada a Objetos (POO)
+
+Encapsulamento, herança e abstração
+
+Modelagem de dados e operações bancárias básicaslo do Projeto
+
+Uma breve descrição sobre o que esse projeto faz e para quem ele é
 
